@@ -14,7 +14,7 @@ print "You have to give your theme a name but you can leave the others blank if 
 print "Let's get started.\n"
 
 # Get your customizations
-name = raw_input("Name? ")
+name = raw_input('Name? ')
 
 # You need to provide at least a name
 if not name:
@@ -32,13 +32,13 @@ generate_submit = 'Generate'
 
 # Setup the POST data
 data = {
-'underscoresme_name': name,
-'underscoresme_slug': slug,
-'underscoresme_author': author,
-'underscoresme_author_uri': author_uri,
-'underscoresme_description': description,
-'underscoresme_generate': generate,
-'underscoresme_generate_submit': generate_submit
+    'underscoresme_name': name,
+    'underscoresme_slug': slug,
+    'underscoresme_author': author,
+    'underscoresme_author_uri': author_uri,
+    'underscoresme_description': description,
+    'underscoresme_generate': generate,
+    'underscoresme_generate_submit': generate_submit
 }
 post_body = urllib.urlencode(data)
 
