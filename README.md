@@ -14,18 +14,24 @@ The easiest way to use `_sh` is to put it in a place that your `PATH` can access
 git clone git@github.com:evansolomon/_sh.git /path/to/wherever/you/want/to/save/it
 ```
 
-Before you do anything with `_sh` you have to make it executable, so that you can actually run the code. Go to wherever you cloned the respository and run this.
+From the directory that you cloned `_sh`, you can run the `setup.py` installer script to create a symlink.
 
 ```shell
-chmod u+x _sh
+python setup.py
 ```
 
-**Note:** This should be run from inside the repository, not from its parent directory.  The `_sh` referenced here is the file (the one with all the python code), not the directory; they just happen to share the same name by default.
+That will give you a prompt where you can type the directory that you want to link `_sh` to.
 
-At this point you have two good options, you can either add this location to your `PATH` or you can symlink `_sh` to somewhere that your `PATH` already uses. I already have a bin scripts directory, so I symlinked `_sh` there.
+```
+Welcome to _sh.
 
-```shell
-ln -s /path/to/_sh /path/to/bin/directory
+Where do you want to symlink _sh? ~/bin
+
+
+
+Running...
+
+ln -s /Users/evan/code/_sh/_sh /Users/evan/bin
 ```
 
 ## Usage
