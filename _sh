@@ -30,7 +30,7 @@ description = raw_input('Description? ')
 generate = 1
 generate_submit = 'Generate'
 
-# Setup the POST data
+# Setup the request data
 data = {
     'underscoresme_name': name,
     'underscoresme_slug': slug,
@@ -41,9 +41,10 @@ data = {
     'underscoresme_generate_submit': generate_submit
 }
 post_body = urllib.urlencode(data)
+headers = {'User-Agent': '_sh'}
 
 # Make the request
-request = urllib2.Request('http://underscores.me', post_body)
+request = urllib2.Request('http://underscores.me', post_body, headers)
 response = urllib2.urlopen(request)
 response.fp
 
