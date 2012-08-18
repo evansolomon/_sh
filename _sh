@@ -1,0 +1,60 @@
+#!/usr/bin/env python
+
+# http://xkcd.com/353/
+import urllib
+import urllib2
+import shutil
+import sys
+import zipfile
+import os
+
+# Welcome the user
+print "I'm going to ask you for some information about your theme.\n"
+print "You have to give your theme a name but you can leave the others blank if you want.\n"
+print "Let's get started.\n"
+
+# Get your customizations
+name = raw_input("Name? ")
+
+# You need to provide at least a name
+if not name:
+    print 'You need a name for your theme'
+    sys.exit()
+
+slug = raw_input('Slug? ')
+author = raw_input('Author? ')
+author_uri = raw_input('Author URI? ')
+description = raw_input('Description? ')
+
+# And a few defaults
+generate = 1
+generate_submit = 'Generate'
+
+# Setup the POST data
+data = {
+'underscoresme_name': name,
+'underscoresme_slug': slug,
+'underscoresme_author': author,
+'underscoresme_author_uri': author_uri,
+'underscoresme_description': description,
+'underscoresme_generate': generate,
+'underscoresme_generate_submit': generate_submit
+}
+post_body = urllib.urlencode(data)
+
+# Make the request
+request = urllib2.Request('http://underscores.me', post_body)
+response = urllib2.urlopen(request)
+response.fp
+
+# Save the zip file
+target = open(name + '.zip', 'wb')
+shutil.copyfileobj(response.fp, target)
+target.close()
+
+# Unzip it
+zip = zipfile.ZipFile(name + '.zip')
+zip.extractall()
+
+# Delete the zip file
+os.remove(name + '.zip')
