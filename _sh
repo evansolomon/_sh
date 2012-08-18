@@ -21,6 +21,11 @@ if not name:
     print 'You need a name for your theme'
     sys.exit()
 
+# ... and it needs to be unique
+if os.path.exists(name) or os.path.exists(name + '.zip'):
+    print "You should pick a name that isn't already used for a file or directory"
+    sys.exit()
+
 slug = raw_input('Slug? ')
 author = raw_input('Author? ')
 author_uri = raw_input('Author URI? ')
