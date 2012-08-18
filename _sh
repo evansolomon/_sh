@@ -13,19 +13,20 @@ print "I'm going to ask you for some information about your theme.\n"
 print "You have to give your theme a name but you can leave the others blank if you want.\n"
 print "Let's get started.\n"
 
-# Get your customizations
+# Get your theme name
 name = raw_input('Name? ')
 
 # You need to provide at least a name
 if not name:
-    print 'You need a name for your theme'
+    print "\nYou need a name for your theme.\n\nExiting..."
     sys.exit()
 
 # ... and it needs to be unique
 if os.path.exists(name) or os.path.exists(name + '.zip'):
-    print "You should pick a name that isn't already used for a file or directory"
+    print "\nYou should pick a name that isn't already used for a file or directory.\n\nExiting..."
     sys.exit()
 
+# Get the res
 slug = raw_input('Slug? ')
 author = raw_input('Author? ')
 author_uri = raw_input('Author URI? ')
