@@ -1,4 +1,4 @@
-# _sh
+# _sh (the _s shell)
 
 `_sh` is a command line tool to generate forks of the [_s](https://github.com/Automattic/_s) WordPress starter theme.  It uses [underscores.me](http://underscores.me/) to create the fork, but lets you do it entirely from the command line.
 
