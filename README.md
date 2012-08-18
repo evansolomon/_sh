@@ -41,7 +41,7 @@ Assuming you've setup `_sh` to be accessible in your `PATH`, to use it you can j
 When you call `_sh` you'll get an interactive prompt that will walk you through setting up your theme. The new theme will get created in a child directory of wherever the command is run from. Here's an example:
 
 ```shell
-cd ~/code/themes && _sh
+mkdir -p ~/code/themes && cd ~/code/themes && _sh
 ```
 Once I run the `_sh` command I'll get an interactive prompt with a few questions to setup my new theme. It's hard to tell from here, but the introduction and questions all come from `_sh`, and the answers come from me, typed into an interactive prompt in Terminal. Most of these questions are optional; the only one you must answer is the theme's name.
 
