@@ -11,7 +11,7 @@ It lives at [https://github.com/evansolomon/_sh](https://github.com/evansolomon/
 The easiest way to use `_sh` is to put it in a place that your `PATH` can access it. First, `clone` this repository.
 
 ```shell
-git clone git@github.com:evansolomon/_sh.git /path/to/wherever/you/want/to/save/it
+git clone https://github.com/evansolomon/_sh.git /path/to/wherever/you/want/to/save/it
 ```
 
 From the directory that you cloned `_sh`, you can run the `setup.py` installer script to create a symlink.
