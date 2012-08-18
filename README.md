@@ -20,7 +20,7 @@ From the directory that you cloned `_sh`, you can run the `setup.py` installer s
 python setup.py
 ```
 
-That will give you a prompt where you can type the directory that you want to link `_sh` to.  Here I'll set it up to live in me `~/bin` directory.
+That will give you a prompt where you can type the directory that you want to link `_sh` to.  Here I'll set it up to live in my `~/bin` directory.
 
 ```
 Welcome to _sh.
