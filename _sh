@@ -48,7 +48,6 @@ headers = {'User-Agent': '_sh'}
 # Make the request
 request = urllib2.Request('http://underscores.me', body, headers)
 response = urllib2.urlopen(request)
-response.fp
 
 # Save the zip file
 target = open(name + '.zip', 'wb')
