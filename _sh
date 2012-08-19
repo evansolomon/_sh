@@ -15,14 +15,9 @@ print "Let's get started.\n"
 # Get your theme name
 name = raw_input('Name? ')
 
-# You need to provide at least a name
-while not name:
-    print "\nYou need a name for your theme.\n\n"
-    name = raw_input('Name? ')
-
-# ... and it needs to be unique
-while os.path.exists(name) or os.path.exists(name + '.zip'):
-    print "\nYou should pick a name that isn't already used for a file or directory.\n\n"
+# You need to provide a unique name for the theme
+while not name or os.path.exists(name) or os.path.exists(name + '.zip'):
+    print "\nYou need a name for your theme that doesn't match existing files or directories.\n\n"
     name = raw_input('Name? ')
 
 # Get the rest of your customizations
