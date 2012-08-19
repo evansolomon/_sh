@@ -4,7 +4,6 @@
 import urllib
 import urllib2
 import shutil
-import sys
 import zipfile
 import os
 
@@ -17,14 +16,14 @@ print "Let's get started.\n"
 name = raw_input('Name? ')
 
 # You need to provide at least a name
-if not name:
-    print "\nYou need a name for your theme.\n\nExiting..."
-    sys.exit()
+while not name:
+    print "\nYou need a name for your theme.\n\n"
+    name = raw_input('Name? ')
 
 # ... and it needs to be unique
-if os.path.exists(name) or os.path.exists(name + '.zip'):
-    print "\nYou should pick a name that isn't already used for a file or directory.\n\nExiting..."
-    sys.exit()
+while os.path.exists(name) or os.path.exists(name + '.zip'):
+    print "\nYou should pick a name that isn't already used for a file or directory.\n\n"
+    name = raw_input('Name? ')
 
 # Get the rest of your customizations
 slug = raw_input('Slug? ')
